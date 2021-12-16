@@ -8,9 +8,12 @@ let socketIO = require('socket.io');
 let io = socketIO(server);
 const dbConnect = require("./config/connectDB");
 const port = process.env.PORT || 3000;
+const authRouter = require("./routes/auth");
 
 // connect DB
 dbConnect();
+//body parse midware
+app.use(express.json());
 
 io.on('connection', (socket) => {
     socket.on('join', (data) => {
@@ -26,3 +29,7 @@ io.on('connection', (socket) => {
 server.listen(port, () => {
     console.log(`App running on port ${port}...`);
   });
+
+//create route
+app.use("/api/user", require("./routes/users"));
+app.use("/api/auth", authRouter);

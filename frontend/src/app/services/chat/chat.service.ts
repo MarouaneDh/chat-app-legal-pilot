@@ -8,7 +8,7 @@ import { io, Socket } from 'socket.io-client';
 export class ChatService {
 
   private socket: Socket;
-  private url = 'http://localhost:3000'; // your server local path
+  private url = 'http://localhost:4112'; // your server local path
 
   constructor() {
     this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});
