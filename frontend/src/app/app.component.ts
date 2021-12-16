@@ -18,7 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private storageArray = [];
 
   public showScreen = false;
-  public phone: string;
+  public email: string;
   public currentUser;
   public selectedUser;
 
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     {
       id: 1,
       name: 'Marouane',
-      phone: '10101010',
+      email: 'mar@gmail.com',
       image: 'https://cdn-icons-png.flaticon.com/512/147/147144.png',
       roomId: {
         2: 'room-1',
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     {
       id: 2,
       name: 'Moncef',
-      phone: '20202020',
+      email: 'mon@gmail.com',
       image: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
       roomId: {
         1: 'room-1',
@@ -48,7 +48,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     {
       id: 3,
       name: 'Chahra',
-      phone: '30303030',
+      email: 'cha@gmail.com',
       image: 'https://cdn-icons-png.flaticon.com/512/194/194938.png',
       roomId: {
         1: 'room-2',
@@ -59,7 +59,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     {
       id: 4,
       name: 'Fatma',
-      phone: '40404040',
+      email: 'fat@gmail.com',
       image: 'https://emdisn.com/wp-content/uploads/2019/01/avatar-373-456325.png',
       roomId: {
         1: 'room-3',
@@ -99,8 +99,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   login(dismiss: any): void {
-    this.currentUser = this.userList.find(user => user.phone === this.phone.toString());
-    this.userList = this.userList.filter((user) => user.phone !== this.phone.toString());
+    this.currentUser = this.userList.find(user => user.email === this.email.toString());
+    this.userList = this.userList.filter((user) => user.email !== this.email.toString());
 
     if (this.currentUser) {
       this.showScreen = true;
@@ -108,8 +108,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
-  selectUserHandler(phone: string): void {
-    this.selectedUser = this.userList.find(user => user.phone === phone);
+  selectUserHandler(email: string): void {
+    this.selectedUser = this.userList.find(user => user.email === email);
     this.roomId = this.selectedUser.roomId[this.currentUser.id];
     this.messageArray = [];
 

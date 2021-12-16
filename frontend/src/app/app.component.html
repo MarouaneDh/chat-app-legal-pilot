@@ -6,9 +6,9 @@
 
       <div class="user-list-card">
         <div class="user-card"
-            [ngClass]="user?.phone === selectedUser?.phone && 'active'"
+            [ngClass]="user?.email === selectedUser?.email && 'active'"
              *ngFor="let user of userList"
-            (click)="selectUserHandler(user?.phone)"
+            (click)="selectUserHandler(user?.email)"
         >
 
           <img [src]="user?.image"
@@ -86,10 +86,10 @@
       <div class="col-md-12">
 
         <div class="form-group">
-          <input type="number"
-                placeholder="Enter your phone number"
+          <input type="email"
+                placeholder="Enter your email number"
                 class="form-control"
-                [(ngModel)]="phone"
+                [(ngModel)]="email"
           />
         </div>
 
