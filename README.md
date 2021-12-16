@@ -13,7 +13,7 @@ open two terminals:
 there are 4 users you can log in with.
 
 logins:
-  10101010
-  20202020
-  30303030
-  40404040
+  mar@gmail.com
+  mon@gmail.com
+  cha@gmail.com
+  fat@gmail.com
